@@ -182,16 +182,25 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
 .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
 .brand-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; color: var(--bg-dark); }
 .brand-icon { color: var(--brand-teal); }
-.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links { display: flex; gap: 20px; align-items: center; }
 .nav-links a { color: var(--bg-dark); font-weight: 600; font-size: 0.95rem; }
 .nav-links a:hover { color: var(--brand-teal); }
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 6px; }
 .menu-toggle span { display: block; width: 28px; height: 3px; background: var(--bg-dark); transition: var(--transition); border-radius: 2px; }
+.header-cta { padding: 10px 16px; font-size: 0.92rem; line-height: 1.2; white-space: nowrap; }
+
+@media (max-width: 1024px) {
+    .brand-text { font-size: 1.05rem; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 0.9rem; }
+    .header-cta { padding: 9px 14px; font-size: 0.88rem; }
+}
 
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
     .nav-links { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: var(--bg-light); flex-direction: column; padding: 25px 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     .nav-links.active { display: flex; }
+    .header-cta { width: auto; }
 }
 
 /* =========================================
