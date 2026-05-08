@@ -42,11 +42,22 @@
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-            if (menuToggle) {
+            const dropdownToggles = document.querySelectorAll('.has-dropdown > .nav-link');
+
+            if (menuToggle && navLinks) {
                 menuToggle.addEventListener('click', () => {
                     navLinks.classList.toggle('active');
                 });
             }
+
+            dropdownToggles.forEach((toggle) => {
+                toggle.addEventListener('click', (event) => {
+                    if (window.innerWidth <= 768) {
+                        event.preventDefault();
+                        toggle.parentElement.classList.toggle('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
