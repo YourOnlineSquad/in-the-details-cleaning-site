@@ -521,6 +521,70 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
 .glass-card:hover .card-icon { transform: scale(1.05) rotate(-5deg); color: var(--brand-teal); }
 .section-dark .card-icon { box-shadow: inset 0 0 15px rgba(0,0,0,0.5); }
 
+/* Service page premium feature band */
+.service-feature-band .container {
+    max-width: 1240px;
+}
+
+.service-feature-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+}
+
+.service-feature-item {
+    position: relative;
+    padding: 20px 8px 8px;
+}
+
+.service-feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-primary);
+    background: linear-gradient(145deg, rgba(30,136,229,0.14), rgba(0,191,166,0.14));
+    box-shadow: 0 0 0 1px rgba(30,136,229,0.2), 0 0 26px rgba(0,191,166,0.20);
+    margin-bottom: 14px;
+    animation: serviceGlowDrift 5.5s ease-in-out infinite;
+}
+
+.service-feature-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.service-feature-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.service-feature-item .body-copy {
+    margin-bottom: 0;
+    font-size: 1.02rem;
+}
+
+@media (min-width: 768px) {
+    .service-feature-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 40px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .service-feature-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 34px;
+    }
+}
+
+@keyframes serviceGlowDrift {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 0 1px rgba(30,136,229,0.2), 0 0 22px rgba(0,191,166,0.17); }
+    50% { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(30,136,229,0.25), 0 0 30px rgba(0,191,166,0.26); }
+}
+
 /* =========================================
    COMPONENTS (Trust, FAQ, Footer)
    ========================================= */
