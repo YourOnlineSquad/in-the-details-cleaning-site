@@ -585,6 +585,97 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
     50% { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(30,136,229,0.25), 0 0 30px rgba(0,191,166,0.26); }
 }
 
+/* Basic maintenance visit breakdown */
+.visit-breakdown-layout {
+    align-items: center;
+    gap: 48px;
+}
+
+.visit-breakdown-copy {
+    max-width: 560px;
+}
+
+.visit-breakdown-panel {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(30, 136, 229, 0.16);
+    border-radius: 20px;
+    padding: 8px 18px;
+    box-shadow: 0 22px 40px rgba(10, 31, 46, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.visit-breakdown-row {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 18px;
+    align-items: start;
+    padding: 20px 6px;
+}
+
+.visit-breakdown-row + .visit-breakdown-row {
+    border-top: 1px solid rgba(10, 31, 46, 0.09);
+}
+
+.visit-breakdown-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-primary);
+    background: linear-gradient(145deg, rgba(30,136,229,0.16), rgba(0,191,166,0.18));
+    box-shadow: 0 0 0 1px rgba(30,136,229,0.22), 0 0 24px rgba(0,191,166,0.18);
+    animation: visitIconGlow 5s ease-in-out infinite;
+}
+
+.visit-breakdown-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.visit-breakdown-row h3 {
+    font-size: 1.2rem;
+    margin: 2px 0 6px;
+}
+
+.visit-breakdown-row .body-copy {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+    .visit-breakdown-layout {
+        gap: 28px;
+    }
+
+    .visit-breakdown-panel {
+        padding: 4px 12px;
+    }
+
+    .visit-breakdown-row {
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        padding: 16px 4px;
+    }
+
+    .visit-breakdown-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+    }
+
+    .visit-breakdown-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@keyframes visitIconGlow {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 0 1px rgba(30,136,229,0.22), 0 0 20px rgba(0,191,166,0.15); }
+    50% { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(30,136,229,0.27), 0 0 26px rgba(0,191,166,0.24); }
+}
+
 /* =========================================
    COMPONENTS (Trust, FAQ, Footer)
    ========================================= */
