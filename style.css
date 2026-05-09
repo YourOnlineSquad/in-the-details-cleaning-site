@@ -746,6 +746,23 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
     font-size: 0.96rem;
 }
 
+.service-photo-frame:has(.service-photo-image) {
+    min-height: 0;
+    padding: 0;
+}
+
+.service-photo-frame:has(.service-photo-image)::before,
+.service-photo-frame:has(.service-photo-image)::after {
+    display: none;
+}
+
+.service-photo-image {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 40vw, 340px);
+    object-fit: cover;
+}
+
 .service-split-copy .body-copy-large,
 .service-trust-copy .body-copy-large {
     margin-bottom: 0;
@@ -836,6 +853,10 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
     .service-photo-frame {
         min-height: 230px;
         padding: 28px 18px;
+    }
+
+    .service-photo-image {
+        height: 220px;
     }
 
     .visit-breakdown-copy .section-title,
