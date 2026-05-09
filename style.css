@@ -655,6 +655,83 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
     max-width: 540px;
 }
 
+.service-photo-placeholder-layout {
+    display: grid;
+    gap: 38px;
+    align-items: center;
+}
+
+.service-photo-placeholder-content {
+    display: grid;
+    gap: 28px;
+    min-width: 0;
+}
+
+.service-photo-placeholder {
+    width: 100%;
+    min-width: 0;
+}
+
+.service-photo-frame {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 36px 24px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(0, 191, 166, 0.16), transparent 28%),
+        radial-gradient(circle at 82% 78%, rgba(102, 255, 240, 0.14), transparent 26%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(245, 247, 250, 0.82));
+    border: 1px solid rgba(30, 136, 229, 0.16);
+    box-shadow: 0 20px 40px rgba(10, 31, 46, 0.12), 0 0 28px rgba(0, 191, 166, 0.08);
+}
+
+.service-photo-frame::before,
+.service-photo-frame::after {
+    content: "";
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 191, 166, 0.28);
+    box-shadow: 0 0 26px rgba(0, 191, 166, 0.16);
+    pointer-events: none;
+}
+
+.service-photo-frame::before {
+    top: 24px;
+    right: 24px;
+}
+
+.service-photo-frame::after {
+    bottom: 24px;
+    left: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+}
+
+.service-photo-placeholder-text {
+    position: relative;
+    z-index: 1;
+    color: var(--text-main);
+    font-weight: 800;
+    font-size: 1.18rem;
+}
+
+.service-photo-placeholder-helper {
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    font-size: 0.96rem;
+}
+
 .service-split-copy .body-copy-large,
 .service-trust-copy .body-copy-large {
     margin-bottom: 0;
@@ -726,6 +803,10 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     }
 
+    .service-photo-placeholder-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.92fr);
+    }
+
     .service-trust-panel {
         grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
     }
@@ -733,8 +814,14 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
 
 @media (max-width: 767px) {
     .visit-breakdown-layout,
-    .service-split-list {
+    .service-split-list,
+    .service-photo-placeholder-layout {
         gap: 24px;
+    }
+
+    .service-photo-frame {
+        min-height: 230px;
+        padding: 28px 18px;
     }
 
     .visit-breakdown-copy .section-title,
