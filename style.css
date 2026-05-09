@@ -431,9 +431,14 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
 }
 
 /* Hero Visual Wrappers */
-.hero-visual-card { background: rgba(10, 31, 46, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(102, 255, 240, 0.1); border-radius: var(--radius-lg); padding: 50px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.hero-visual-card { background: transparent; backdrop-filter: none; border: 0; border-radius: 0; padding: 0; display: flex; justify-content: center; align-items: center; position: relative; overflow: visible; box-shadow: none; min-height: 320px; }
 .hero-glow { position: absolute; width: 150px; height: 150px; background: var(--brand-teal); filter: blur(80px); opacity: 0.4; z-index: 1; animation: pulseGlow 5s infinite alternate; }
-.hero-vector { width: 100%; max-width: 400px; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 0 20px rgba(0, 191, 166, 0.5)); animation: float 6s ease-in-out infinite; }
+.hero-vector { width: 100%; max-width: 460px; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 0 20px rgba(0, 191, 166, 0.5)); animation: float 6s ease-in-out infinite; }
+
+@media (max-width: 768px) {
+    .hero-visual-card { min-height: 220px; }
+    .hero-vector { max-width: 320px; }
+}
 
 @keyframes pulseGlow {
     0% { transform: scale(1); opacity: 0.3; }
