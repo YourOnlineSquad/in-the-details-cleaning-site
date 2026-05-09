@@ -644,30 +644,135 @@ p { margin-bottom: 1.5rem; font-size: 1.15rem; }
     font-size: 1rem;
 }
 
+/* Basic maintenance extra depth sections */
+.service-audience-list {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    gap: 14px;
+}
+
+.service-audience-item {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 14px;
+    align-items: start;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(10, 31, 46, 0.09);
+    border-radius: 14px;
+    padding: 16px 16px;
+}
+
+.service-audience-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-primary);
+    background: linear-gradient(145deg, rgba(30,136,229,0.14), rgba(0,191,166,0.14));
+    box-shadow: 0 0 0 1px rgba(30,136,229,0.2), 0 0 20px rgba(0,191,166,0.14);
+}
+
+.service-audience-mark svg {
+    width: 20px;
+    height: 20px;
+}
+
+.service-audience-item .body-copy {
+    margin: 0;
+    font-size: 1.03rem;
+}
+
+.non-toxic-points {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.non-toxic-point {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(10, 31, 46, 0.1);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.non-toxic-point h3 {
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+}
+
+.non-toxic-point .body-copy {
+    margin: 0;
+    font-size: 1.02rem;
+}
+
+@media (min-width: 860px) {
+    .service-audience-list,
+    .non-toxic-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 767px) {
     .visit-breakdown-layout {
-        gap: 28px;
+        gap: 24px;
+    }
+
+    .visit-breakdown-copy .section-title,
+    .visit-breakdown-copy .body-copy-large {
+        text-align: left;
     }
 
     .visit-breakdown-panel {
-        padding: 4px 12px;
+        padding: 2px 10px;
     }
 
     .visit-breakdown-row {
-        grid-template-columns: 48px 1fr;
-        gap: 14px;
-        padding: 16px 4px;
+        grid-template-columns: 44px 1fr;
+        gap: 12px;
+        padding: 14px 2px;
     }
 
     .visit-breakdown-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
     }
 
     .visit-breakdown-icon svg {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .visit-breakdown-row h3,
+    .visit-breakdown-row .body-copy,
+    .service-audience-item .body-copy,
+    .non-toxic-point h3,
+    .non-toxic-point .body-copy {
+        text-align: left;
+    }
+
+    .service-audience-item {
+        grid-template-columns: 40px 1fr;
+        padding: 14px 12px;
+    }
+
+    .service-audience-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .service-audience-mark svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .non-toxic-point {
+        padding: 16px 14px;
     }
 }
 
